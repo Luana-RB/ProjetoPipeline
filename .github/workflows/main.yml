@@ -5,10 +5,14 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  job-name: setup
+  build:
     runs-on: ubuntu-latest
-  steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Custom Step
-        run: echo "Hello world" 
+    steps:
+    - uses: actions/checkout@v4
+    - name: install
+      run: npm i netlify
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deplot to netlify
+      run:  netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --dir="." --prod
