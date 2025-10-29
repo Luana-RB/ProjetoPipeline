@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: install
-      run: npm i netlify
+    - name: install node
+      run: actions/setup-node@v4
+    - name: install netlify
+      run: node install -g netlify
     - name: deplot to netlify
       run:  netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --dir="." --prod
