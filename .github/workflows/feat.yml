@@ -13,4 +13,4 @@ jobs:
     - name: install netlify    
       run: npm i -g vercel
     - name: deploy to netlify
-      run: npx vercel --prod
+      run: npx vercel --prod -y
