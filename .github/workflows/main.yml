@@ -10,7 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-    - name: install netlify
-      run: node install -g netlify
-    - name: deplot to netlify
+      with:
+        node-version: '20'
+    - name: install netlify    
+    - run: npm install -g netlify
+    - name: deploy to netlify
       run:  netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --dir="." --prod
