@@ -1,4 +1,7 @@
 name: CI Workflow
+env:
+  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 on:
   push:
     branches: [main]
