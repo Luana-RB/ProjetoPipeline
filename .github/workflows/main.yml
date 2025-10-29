@@ -10,8 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-      with:
-        node-version: '20'
     - name: install netlify    
     - run: npm install -g netlify
     - name: deploy to netlify
