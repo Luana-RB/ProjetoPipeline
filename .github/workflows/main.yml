@@ -13,4 +13,4 @@ jobs:
     - name: install netlify    
       run: npm install -g netlify
     - name: deploy to netlify
-      run:  netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --dir="." --prod
+      run: npx netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --dir="." --prod
