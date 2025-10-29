@@ -1,0 +1,14 @@
+name: deploy netlify
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  job-name: setup
+    runs-on: ubuntu-latest
+  steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Custom Step
+        run: echo "Hello world" 
