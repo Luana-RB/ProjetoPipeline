@@ -1,4 +1,7 @@
 name: deploy in vercel
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
     branches: [feat]
@@ -13,4 +16,4 @@ jobs:
     - name: install netlify    
       run: npm i -g vercel
     - name: deploy to netlify
-      run: npx vercel --prod
+      run: npx vercel --prod -y --token=${{ secrets.VERCEL_TOKEN }}
