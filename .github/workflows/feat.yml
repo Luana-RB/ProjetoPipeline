@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
-    - name: install netlify    
+    - name: install vercel    
       run: npm i -g vercel
-    - name: deploy to netlify
+    - name: deploy to vercel
       run: npx vercel --prod -y --token=${{ secrets.VERCEL_TOKEN }}
